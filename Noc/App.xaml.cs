@@ -16,35 +16,50 @@ namespace Noc
     public partial class App : Application
     {
         public static string path;
+        public string Argument;
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            Argument = "";
             foreach (string autoruns in e.Args)
             {
-                if (autoruns == "info")
-                {
-
-                }
-
-                if (autoruns == "getway" || autoruns == "gt")
-                {
-                    var win = new OpenFileDialog();
-
-                    win.InitialDirectory = "C:\\";
-                    win.Title = "Выбери файл чтоб скопировать его путь";
-
-                    win.ShowDialog();
-
-                    path = win.FileName;
-
-                    Path linkwin = new Path(" ");
-                    linkwin.ShowDialog();
-                }
-                Process.Start(autoruns);
-
-                Process.GetCurrentProcess().Kill();
+                Argument += autoruns;
             }
 
+            if (Argument == "info")
+            {
+                Info linkwin = new Info(" ");
+                linkwin.ShowDialog();
+            }
+
+            if (Argument == "getway" || Argument == "gt")
+            {
+                var win = new OpenFileDialog();
+
+                win.InitialDirectory = "C:\\";
+                win.Title = "Выбери файл путь к которому нужно получить";
+
+                win.ShowDialog();
+
+                path = win.FileName;
+
+                MessageBox.Show(path); //debug
+
+                Path linkwin = new Path(" ");
+                linkwin.ShowDialog();
+            }
+            MessageBox.Show(Argument);
+            try
+            {
+                Process.Start(Argument);
+            }
+            catch
+            {
+                MessageBox.Show("Проверьте правильноть указанного пути","Ошибка");
+            }
+            
+
+            //Process.GetCurrentProcess().Kill();
         }
     }
 }
