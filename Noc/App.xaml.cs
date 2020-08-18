@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -14,15 +15,34 @@ namespace Noc
     /// </summary>
     public partial class App : Application
     {
+        public static string path;
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             foreach (string autoruns in e.Args)
             {
-                if (autoruns == "тест")
+                if (autoruns == "info")
                 {
-                    Process.GetCurrentProcess().Kill();
+
                 }
+
+                if (autoruns == "getway" || autoruns == "gt")
+                {
+                    var win = new OpenFileDialog();
+
+                    win.InitialDirectory = "C:\\";
+                    win.Title = "Выбери файл чтоб скопировать его путь";
+
+                    win.ShowDialog();
+
+                    path = win.FileName;
+
+                    Path linkwin = new Path(" ");
+                    linkwin.ShowDialog();
+                }
+                Process.Start(autoruns);
+
+                Process.GetCurrentProcess().Kill();
             }
 
         }
