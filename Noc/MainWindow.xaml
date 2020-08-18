@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Noc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        WindowStyle="ToolWindow"
+        Title="Noc" MinHeight="250" MinWidth="300" Height="250" Width="300">
+    <Grid Background="#1E1E1E">
+        <TextBlock Foreground="Red" FontSize="21" Text="Нет! Это не так работает!" TextAlignment="Center" FontWeight="Bold"/>
+        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="15" Text="На сайте есть подробная информация об использовании Noc" TextAlignment="Center" Margin="-1,29,1,5" TextDecorations="{x:Null}" FontWeight="Bold"/>
+        <Button FontSize="18" Margin="106,0,106,4" Content="Ок" Click="Button_Click_1" Height="35" VerticalAlignment="Bottom" BorderBrush="{x:Null}" Background="#FF343434" Foreground="White" FontWeight="Bold"></Button>
+        <Button FontSize="18" Content="Как этим пользоваться?" Margin="26,137,24,0" Click="Button_Click" Height="35" VerticalAlignment="Top" Background="#FF343434" Foreground="White" BorderBrush="{x:Null}" FontWeight="Bold"></Button>
+
     </Grid>
 </Window>
