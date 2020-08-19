@@ -27,7 +27,8 @@ namespace Noc
             {
                 Process.GetCurrentProcess().Kill();
             }
-            linkfield.Text = App.path;
+            linkfield.Text = xxx.Text + App.path + xxx.Text;
         }
+
     }
 }

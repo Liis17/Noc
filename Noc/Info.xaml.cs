@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace Noc
         public Info(string v)
         {
             InitializeComponent();
+        }
+
+        private void click(object sender, MouseButtonEventArgs e)
+        {
+            Process.Start("https://ww3.orbitinspace.site/program/noc");
         }
     }
 }

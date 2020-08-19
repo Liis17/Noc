@@ -16,50 +16,46 @@ namespace Noc
     public partial class App : Application
     {
         public static string path;
-        public string Argument;
+        //public static string Argument;
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            Argument = "";
             foreach (string autoruns in e.Args)
             {
-                Argument += autoruns;
+                if (autoruns == "info")
+                {
+                    Info linkwin = new Info(" ");
+                    linkwin.ShowDialog();
+                }
+
+                else if (autoruns == "getway" || autoruns == "gw")
+                {
+                    var win = new OpenFileDialog();
+
+                    win.InitialDirectory = "C:\\";
+                    win.Title = "Выбери файл путь к которому нужно получить";
+
+                    win.ShowDialog();
+
+                    path = win.FileName;
+
+                    Path linkwin = new Path(" ");
+                    linkwin.ShowDialog();
+                }
+                else if (autoruns != "info" && autoruns != "getway" && autoruns != "gw")
+                {
+                    try
+                    {
+                        Process.Start(autoruns);
+                        Process.GetCurrentProcess().Kill();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Проверьте правильноть указанного пути" + "\n" + "Ваш путь: " + autoruns, "Ошибка");
+                        Process.GetCurrentProcess().Kill();
+                    }
+                }
             }
-
-            if (Argument == "info")
-            {
-                Info linkwin = new Info(" ");
-                linkwin.ShowDialog();
-            }
-
-            if (Argument == "getway" || Argument == "gt")
-            {
-                var win = new OpenFileDialog();
-
-                win.InitialDirectory = "C:\\";
-                win.Title = "Выбери файл путь к которому нужно получить";
-
-                win.ShowDialog();
-
-                path = win.FileName;
-
-                MessageBox.Show(path); //debug
-
-                Path linkwin = new Path(" ");
-                linkwin.ShowDialog();
-            }
-            MessageBox.Show(Argument);
-            try
-            {
-                Process.Start(Argument);
-            }
-            catch
-            {
-                MessageBox.Show("Проверьте правильноть указанного пути","Ошибка");
-            }
-            
-
-            //Process.GetCurrentProcess().Kill();
         }
     }
 }

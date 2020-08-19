@@ -10,6 +10,9 @@
         WindowStyle="ToolWindow"
         Title="Path" Height="400" Width="700" MinHeight="125" MinWidth="150">
     <Grid Background="#1E1E1E">
-        <TextBox x:Name="linkfield" TextWrapping="Wrap" Text="тестовый текст" FontSize="20" Background="#1E1E1E" Margin="-1,-1,-1,-1" Foreground="White" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBox x:Name="linkfield" IsReadOnly="True" TextWrapping="Wrap" 
+                 Text="&quot;" FontSize="20" Background="#1E1E1E" 
+                 Margin="-1,-1,-1,-1" Foreground="White" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock Visibility="Hidden" x:Name="xxx" Text="&quot;" Foreground="White"></TextBlock>
     </Grid>
 </Window>
