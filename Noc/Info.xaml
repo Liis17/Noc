@@ -12,7 +12,7 @@
         Title="Info" Height="550" Width="300">
     <Grid Background="#1E1E1E">
         <Image Source="NocIcon.ico" Margin="0,0,0,415" MouseDown="click" ToolTip="Нажми чтобы открыть сайт"></Image>
-        <TextBlock Text="Beta 2" Foreground="White" FontWeight="Bold" Margin="0,107,0,389" TextAlignment="Center"/>
+        <TextBlock Text="Beta 3" Foreground="White" FontWeight="Bold" Margin="0,107,0,389" TextAlignment="Center"/>
         <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="10,138,0,0" TextWrapping="Wrap" 
                    VerticalAlignment="Top" Height="374" Width="274" Foreground="White"
                    FontFamily="Segoe UI Semibold" TextDecorations="{x:Null}"><Run Text="Noc - программа для запуска других программ через аргументы командной строки, да именно так."/><LineBreak/><Run/>
