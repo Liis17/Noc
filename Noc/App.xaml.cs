@@ -42,7 +42,20 @@ namespace Noc
                     Path linkwin = new Path(" ");
                     linkwin.ShowDialog();
                 }
-                else if (autoruns != "info" && autoruns != "getway" && autoruns != "gw")
+                else if (autoruns == "liis17")
+                {
+                    try
+                    {
+                        Process.Start("tg://resolve?domain=Li_is");
+                        Process.GetCurrentProcess().Kill();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Проверьте правильноть указанного пути" + "\n" + "Ваш путь: " + autoruns, "Ошибка");
+                        Process.GetCurrentProcess().Kill();
+                    }
+                }
+                else if (autoruns != "info" && autoruns != "getway" && autoruns != "gw" && autoruns != "liis17")
                 {
                     try
                     {
@@ -55,6 +68,7 @@ namespace Noc
                         Process.GetCurrentProcess().Kill();
                     }
                 }
+                
             }
         }
     }

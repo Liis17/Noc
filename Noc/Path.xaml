@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Normal"
         WindowStyle="ToolWindow"
-        Title="Path" Height="400" Width="700" MinHeight="125" MinWidth="150">
+        Title="Path" Height="400" Width="700" MinHeight="350" MinWidth="550">
     <Grid Background="#1E1E1E">
         <TextBox x:Name="linkfield" IsReadOnly="True" TextWrapping="Wrap" 
                  Text="&quot;" FontSize="20" Background="#1E1E1E" 

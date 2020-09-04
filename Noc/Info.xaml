@@ -18,6 +18,6 @@
                    FontFamily="Segoe UI Semibold" TextDecorations="{x:Null}"><Run Text="Noc - программа для запуска других программ через аргументы командной строки, да именно так."/><LineBreak/><Run/>
             <LineBreak/><Run Text="Основная задача это иметь возможность закрепить Google Chrome в меню пуск с кастомной иконкой, а не со стандартной, но так же это можно делать с любыми другими программами и даже файлами."/><LineBreak/>
             <Run/><LineBreak/><Run Text="Это описание может вгонять тебя в недоумение, но я пишу это в 4:19 и меня можно понять..."/></TextBlock>
-        <TextBlock FontSize="14" TextWrapping="Wrap" Text="Li_is" Margin="226,501,10,0" Foreground="White" FontWeight="Bold" TextAlignment="Right"/>
+        <TextBlock FontSize="14" TextWrapping="Wrap" Text="Li_is" Margin="0,0,10,0" Foreground="White" FontWeight="Bold" TextAlignment="Right" HorizontalAlignment="Right" Width="58" Height="21" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
